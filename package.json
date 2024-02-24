@@ -1,6 +1,6 @@
 {
   "name": "frontend-byte",
-  "homepage": "https://pratham.eu.org/byte-poetry-frontend/#",
+  "homepage": "https://byte-poem.netlify.app/#",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
