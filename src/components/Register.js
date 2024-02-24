@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // or another library for API requests
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError(null);
@@ -18,8 +19,8 @@ function Register() {
         password,
       });
 
-      if (response.data.success) {
-        // display success message and redirect to login
+      if (response.status === 201) {
+        navigate('/login');
       } else {
         setError(response.data.message || 'Registration failed');
       }
